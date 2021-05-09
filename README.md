@@ -1,42 +1,64 @@
 更新系统：
+```
 yum update -y  #CentOS系统命令
+```
+```
 apt update -y  #Debian系统命令
+```
 ---------ubuntu系统-----
 启动bbr
+```
 sudo bash -c 'echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf'
 sudo bash -c 'echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf'
 sysctl -p
+```
 
 查看bbr是否开启成功
+```
 lsmod | grep bbr
+```
 
 开放端口
 开放所有端口
+```
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
 iptables -P OUTPUT ACCEPT
 iptables -F
+```
 关闭防火墙
+```
 apt-get purge netfilter-persistent
 reboot
+```
 --------------centos系统------------
 关闭防火墙
+```
 systemctl stop firewalld.service && systemctl disable firewalld.service
+```
 开启bbr
+```
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
 sysctl -n net.ipv4.tcp_congestion_control
+```
 查看bbr是否开启成功
+```
 lsmod | grep bbr
+```
 ---------------搭建--------------
 安装组件
+```
 yum install -y wget  #CentOS系统命令
 apt install -y wget  #Debian系统命令
+```
 
 
 xray一键安装脚本
+```
 wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh
+```
 # v2ray-agent
 
 > [感谢 JetBrains 提供的非商业开源软件开发授权](https://www.jetbrains.com/?from=v2ray-agent)
