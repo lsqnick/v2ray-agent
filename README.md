@@ -5,6 +5,9 @@ yum update -y  #CentOS系统命令
 ```
 apt update -y  #Debian系统命令
 ```
+```
+sudo apt-get update  #ubuntu系统命令
+```
 ---------ubuntu系统-----
 启动bbr
 ```
