@@ -151,7 +151,7 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 ## 注意事项
 
 - **修改Cloudflare->SSL/TLS->Overview->Full**
-- **Cloudflare ---> A记录解析的云朵必须为灰色**
+- **Cloudflare ---> A记录解析的云朵必须为灰色【如非灰色，会影响到定时任务自动续签证书】**
 - **使用纯净系统安装，如使用其他脚本安装过，请重新build系统再安装**
 - wget: command not found [**这里需要自己手动安装下wget**]
   ，如未使用过Linux，[点击查看](https://github.com/mack-a/v2ray-agent/tree/master/documents/install_tools.md)安装教程
@@ -183,16 +183,9 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh
 ```
 
-- Stable-v2.2.24
-
+- Stable-v2.4.16【无gRPC】
 ```
-wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/9ae23c13a56460d8c14f27c8eb65efc73b173f46/install.sh" && chmod 700 /root/install.sh && /root/install.sh
-```
-
-- Stable-v2.1.27
-
-```
-wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/3f8ea0aa364ae2e1e407056074c11b448396261f/install.sh" && chmod 700 /root/install.sh && /root/install.sh
+wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/stable_v2.4.16/install.sh" && chmod 700 /root/install.sh && /root/install.sh
 ```
 
 # 示例图
