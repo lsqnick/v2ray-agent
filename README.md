@@ -1,3 +1,4 @@
+shell输入【vasma】即可打开脚本，
 更新系统：
 ```
 yum update -y  #CentOS系统命令
